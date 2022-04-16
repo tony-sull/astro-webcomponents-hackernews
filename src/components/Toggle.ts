@@ -1,18 +1,23 @@
 class HnToggle extends HTMLElement {
+    #anchor: HTMLAnchorElement
+
     static get observedAttributes() {
         return ['open']
     }
 
     connectedCallback() {
-        this.addEventListener('click', () => this.open = !this.open)
+        this.#anchor = this.querySelector<HTMLAnchorElement>('a')
+        this.#anchor.addEventListener('click', () => this.open = !this.open)
     }
 
     attributeChangedCallback() {
+        if (!this.#anchor) { return }
+
         if (this.open) {
-            this.innerText = '[-]'
+            this.#anchor.innerText = '[-]'
             this.classList.add('open')
         } else {
-            this.innerText = '[+] comments collapsed'
+            this.#anchor.innerText = '[+] comments collapsed'
             this.classList.remove('open')
         }
     }
