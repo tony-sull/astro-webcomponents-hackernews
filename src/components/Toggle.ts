@@ -1,15 +1,13 @@
 class HnToggle extends HTMLElement {
-    #anchor
+    #anchor: HTMLAnchorElement
 
     static get observedAttributes() {
         return ['open']
     }
 
     connectedCallback() {
-        setTimeout(() => {
-            this.#anchor = this.querySelector('a')
-            this.#anchor.addEventListener('click', () => this.open = !this.open)
-        })
+        this.#anchor = this.querySelector<HTMLAnchorElement>('a')
+        this.#anchor.addEventListener('click', () => this.open = !this.open)
     }
 
     attributeChangedCallback() {
@@ -28,7 +26,7 @@ class HnToggle extends HTMLElement {
         return this.hasAttribute('open')
     }
 
-    set open(value) {
+    set open(value: boolean) {
         value ? this.setAttribute('open', '') : this.removeAttribute('open')
     }
 }
