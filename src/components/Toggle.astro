@@ -1,0 +1,26 @@
+<hn-toggle open class="toggle open">
+    <a>[-]</a>
+</hn-toggle>
+<ul
+    class="comment-children"
+>
+    <slot />
+</ul>
+
+<script>
+    import "./Toggle.ts";
+</script>
+
+<style is:global>
+    hn-toggle {
+        display: block;
+    }
+
+    hn-toggle + ul {
+        display: none;
+    }
+
+    hn-toggle[open] + ul {
+        display: block;
+    }
+</style>
