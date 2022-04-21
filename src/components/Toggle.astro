@@ -1,6 +1,6 @@
-<hn-toggle open class="toggle open">
+<div open class="toggle open">
     <a>[-]</a>
-</hn-toggle>
+</div>
 <ul
     class="comment-children"
 >
@@ -12,15 +12,15 @@
 </script>
 
 <style is:global>
-    hn-toggle {
+    .toggle {
         display: block;
     }
 
-    hn-toggle + ul {
+    .toggle + ul {
         display: none;
     }
 
-    hn-toggle[open] + ul {
+    .toggle[open] + ul {
         display: block;
     }
 </style>
