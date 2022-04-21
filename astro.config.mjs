@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
-import netlify from "@astrojs/netlify/edge-functions";
+import netlify from "@astrojs/netlify";
 
 import solid from "@astrojs/solid-js";
 
