@@ -8,8 +8,8 @@ requestIdleCallback(function () {
             if (entry.isIntersecting) {
                 observer.unobserve(entry.target);
                 const element = document.createElement(entry.target.getAttribute('data-client-visible'));
-                for (const attr of entry.target.attributes) {
-                    element.setAttributeNode(attr.cloneNode(attr));
+                for (const { name, value } of entry.target.attributes) {
+                    element.setAttribute(name, value);
                 }
                 element.replaceChildren(...entry.target.children);
                 entry.target.replaceWith(element);

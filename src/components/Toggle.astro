@@ -1,12 +1,3 @@
-<div open class="toggle open" data-client-visible="hn-toggle">
-    <a>[-]</a>
-</div>
-<ul
-    class="comment-children"
->
-    <slot />
-</ul>
-
 <script>
     import "./LazyComponent.ts";
     
@@ -45,6 +36,15 @@
 
     customElements.define('hn-toggle', HnToggle)
 </script>
+
+<div open class="toggle open" data-client-visible="hn-toggle">
+    <a>[-]</a>
+</div>
+<ul
+    class="comment-children"
+>
+    <slot />
+</ul>
 
 <style is:global>
     .toggle {
