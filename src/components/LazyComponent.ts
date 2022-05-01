@@ -1,6 +1,6 @@
 import requestIdleCallback from "../utils/requestIdleCallback";
 
-requestIdleCallback(function () {
+function clientVisible() {
     const lazyElements = document.querySelectorAll('[data-client-visible]');
 
     const observer = new IntersectionObserver(entries => {
@@ -20,4 +20,6 @@ requestIdleCallback(function () {
     for (const element of lazyElements) {
         observer.observe(element);
     }
-})
+}
+
+requestIdleCallback(clientVisible)

@@ -1,6 +1,8 @@
-# Astro-Solid Hacker News
+# Astro-CustomElements Hacker News
 
-This repos is a simple demo of using Astro + SolidJS integration to do a Hackernews Clone with Partial Hydration. It is setup with the Netlify Adapter and you can see it deployed [here](https://astro-solid-hn.netlify.app).
+> Based on [Ryan Carniato's](https://twitter.com/RyanCarniato) [astro-solid-hackernews](https://github.com/ryansolid/astro-solid-hackernews) demo.
+
+This repos is a simple demo of using Astro + CustomElements to do a Hackernews Clone with Partial Hydration. It is setup with the Netlify Adapter and you can see it deployed [here](https://astro-webcomponents-hackernews.netlify.app/).
 
 ## 🧞 Commands
 
