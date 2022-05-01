@@ -6,10 +6,5 @@ import solid from "@astrojs/solid-js";
 // https://astro.build/config
 export default defineConfig({
   adapter: netlify(),
-  integrations: [solid()],
-  vite: {
-    build: {
-      assetsInlineLimit: 0
-    }
-  }
+  integrations: [solid()]
 });
