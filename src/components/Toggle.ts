@@ -32,23 +32,3 @@ class HnToggle extends HTMLElement {
 }
 
 customElements.define('hn-toggle', HnToggle)
-
-const toggles = document.querySelectorAll('.toggle');
-
-const observer = new IntersectionObserver(entries => {
-    for (const entry of entries) {
-        if (entry.isIntersecting) {
-            observer.unobserve(entry.target);
-            const element = document.createElement('hn-toggle');
-            for (const attr of entry.target.attributes) {
-                element.setAttributeNode(attr.cloneNode(attr));
-            }
-            element.replaceChildren(...entry.target.children);
-            entry.target.replaceWith(element);
-        }
-    }
-})
-
-for (const toggle of toggles) {
-    observer.observe(toggle);
-}
